@@ -12,16 +12,36 @@
   </div><!-- end .container-fluid -->
 </div><!-- end #main -->
 
-<form action="/account" method="post" enctype="multipart/form-data">
-  <input type="text" name="displayName" placeholder="Display Name" value="<%= locals.user.displayName %>">
-  <input type="email" name="email" placeholder="Email" value="<%= locals.user.email %>">
-  <input type="file" name="avatar" value="<%= locals.user.avatar %>">
-	<button type="submit">Update</button>
-</form>
+<div class="col-2">
+  <form action="/account" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="updateDisplayName">Display Name</label>
+      <input type="text" class="form-control" name="displayName" placeholder="Display Name" value="<%= locals.user.displayName %>" id="updateDisplayName" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="updateInputEmail">Email</label>
+      <input type="email" class="form-control" name="email" placeholder="Email" value="<%= locals.user.email %>" id="updateInputEmail">
+    </div>
+    <div class="form-group">
+      <label for="updateAvatar">Update Avatar</label>
+      <input type="file" name="avatar" value="<%= locals.user.avatar %>" id="updateAvatar">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
 
-<form action="/password" method="post">
-	<input type="password" name="password" placeholder="Password" value="<%= locals.user.password %>">
-	<input type="password" name="passwordConfirm" placeholder="Confirm Password" value="<%= locals.user.passwordConfirm %>">
-	<button type="submit">Update Password</button>
-</form>
+<div class="col-2">
+  <form action="/password" method="post">
+    <div class="form-group">
+      <label for="updatePassword">Password</label>
+      <input type="password" class="form-control" name="password" placeholder="Password" value="<%= locals.user.password %>" id="updatePassword" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="updateConfirmPassword">Confirm Password</label>
+      <input type="password" class="form-control" name="passwordConfirm" placeholder="Confirm Password" value="<%= locals.user.passwordConfirm %>" id="updatePassword" aria-describedby="emailHelp">
+    </div>
+    <button type="submit" class="btn btn-primary">Update Password</button>
+  </form>
+</div>
+
 <%- include('partials/footer'); %>
