@@ -2,16 +2,18 @@
 
 <br><br>
 <div id="body">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="row justify-content-md-center container-fluid">
-        <main role="main" class="col-md-2">
-          <%- include('partials/login'); %>
-          <%- include('partials/register'); %>
-        </main>
-      </div>  
-    </div> <!-- end .row --> 
-  </div><!-- end .container-fluid -->
+  <div class="row justify-content-md-center container-fluid">
+    <div class="col-md-3 p-4 mb-3 bg-light rounded">
+      <div class="container">
+        <div class="row">
+          <div role="main" class="col-md">
+            <%- include('partials/login'); %>
+            <%- include('partials/register'); %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div><!-- end #main -->
 
 <%- include('partials/footer'); %>
