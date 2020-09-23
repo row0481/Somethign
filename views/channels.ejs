@@ -47,7 +47,7 @@ var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
           <% }  %>
           </div>
             <form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
-				<input type="text" class="form-control" name="channelName" placeholder="Channel Name" value="">
+				<input type="text" class="form-control" name="name" placeholder="Channel Name" value="">
 				<input type="file" class="file-input" name="avatar" id="avatar-upload">
 				<% if (users) { %>
 					<% users.forEach(function(user) { %>
