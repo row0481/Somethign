@@ -1,4 +1,10 @@
 <form action="/account" method="post" enctype="multipart/form-data">
+    <% if (locals.user.photoURL) { %>
+    <label for="avatar">Current Avatar</label>
+    <p class="current-avatar">
+        <img src="<%= locals.user.photoURL %>" width="250px">
+    </p>
+    <% } %>
     <div class="form-group">
     <label for="updateAvatar">Update Avatar</label>
     <input type="file" name="avatar" value="<%= locals.user.avatar %>" id="updateAvatar">
