@@ -17,45 +17,52 @@ var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
         <div class="col-md-8 channelsMain">
         <h1 class="pb-4 mb-4 border-bottom">
         Channels
-        </h3>
+        </h1>
         <div class="main">
           <div id="owned-channels" class="user-channels">
-            <h4>Your Channels</h4>
           <% if (owned) { %>
-            <ul>
+            <h4>Your Channels</h4>
             <% owned.forEach(function(channel) { %>
-              <li>
-                <img src="<%= channel.image %>" alt="<%= channel.name %>" width="250px">
-                <a href="/channel/<%= channel.id %>/"><%= channel.name %></a>
-                <a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
-              </li>
+              <div class="h6">
+                <% if (channel.image) { %>
+                  <img class="rounded-circle" src="<%= channel.image %>" width="40" height="40">
+                <% } else { %>
+                  <img class="rounded-circle" src="/image/account.svg" width="40" height="40">
+                <% } %>
+                <a class="mx-2 font-weight-bold" href="/channel/<%= channel.id %>/"><%= channel.name %></a>
+                <a class="text-danger" href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
+              </div>
             <% }) %>
-            </ul>
           <% }  %>
           </div>
           <div id="subscribed-channels" >
-            <h4>Subscribed Channels</h4>
           <% if (subscribed) { %>
-            <ul>
+            <h4>Subscribed Channels</h4>
             <% subscribed.forEach(function(channel) { %>
-              <li>
-                <img src="<%= channel.image %>" alt="<%= channel.name %>" width="250px">
-                <a href="/channel/<%= channel.slug %>/"><%= channel.name %></a>
-              </li>
+              <div class="h6">
+                <% if (channel.image) { %>
+                  <img class="rounded-circle" src="<%= channel.image %>" width="40" height="40">
+                <% } else { %>
+                  <img class="rounded-circle" src="/image/account.svg" width="40" height="40">
+                <% } %>
+                <a href="/channel/<%= channel.id %>/"><%= channel.name %></a>
+              </div>
             <% }) %>
-            </ul>
           <% }  %>
           </div>
+          <h4 class="mt-4">New Channel</h4>
             <form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
 				<input type="text" class="form-control" name="name" placeholder="Channel Name" value="">
-				<input type="file" class="file-input" name="avatar" id="avatar-upload">
+				<input type="file" class="file-input my-2" name="avatar" id="avatar-upload">
 				<% if (users) { %>
 					<% users.forEach(function(user) { %>
-						<input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">
-						<p><%= user.name %></p>
+            <div>
+              <input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">
+              <%= user.name %>
+            </div>
 					<% }) %>
 				<% } %>
-        <button id="update" type="submit">Create</button>
+        <button id="update" class="btn btn-primary mt-2" type="submit">Create</button>
 			</form>
       </div><!-- /.blog-main -->
       </div><!-- /.row -->

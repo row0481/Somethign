@@ -20,24 +20,15 @@
 					<ul class="nav navbar-nav ml-auto">
 						<% if (locals.loggedin) { %>
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<i class="fas fa-address-book"></i>Channels
+                <a class="nav-link" href="/channels">
+                  <i class="fas fa-address-book"></i> Channels
 								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Channel 1</a>
-								<a class="dropdown-item" href="#">Channel 2</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="/channels"><i class="fas fa-address-book"></i>Manage Channels</a>
-								</div>
+              </li>
+							<li class="nav-item">
+                <a class="nav-link" href="/account"><i class="fas fa-sliders-h"></i> Settings</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#"><i class="fas fa-user"></i>Users</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="/account"><i class="fas fa-sliders-h"></i>Settings</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
 							</li>
 						<% } else { %>
 						<% } %>

@@ -1,14 +1,4 @@
-<%- include('partials/header'); %> 
-<% if (locals.errors && locals.errors.profile) { %>
-	<% locals.errors.profile.forEach(function(error) { %>
-		<p class="alert alert-primary" role="alert"><%= error %></p>
-	<% }) %>  
-<% } %>
-<% if (locals.errors && locals.errors.password) { %>
-	<% locals.errors.password.forEach(function(error) { %>
-		<p class="alert alert-primary" role="alert"><%= error %></p>
-	<% }) %>  
-<% } %>
+<%- include('partials/header'); %>
 <!--page layout-->
 <br><br>
 <div class="row justify-content-md-center container-fluid">
@@ -20,11 +10,21 @@
         </h3>
         <div class="main">
           <div class="container">
-            <div class="row">
-              <div class="col-md-6">
+            <div class="d-flex">
+              <div class="w-50 mr-3">
+                <% if (locals.errors && locals.errors.profile) { %>
+                  <% locals.errors.profile.forEach(function(error) { %>
+                    <p class="alert alert-danger" role="alert"><%= error %></p>
+                  <% }) %>
+                <% } %>
                 <%- include('partials/updateAccount'); %>
               </div>
-              <div class="cos-md-6">
+              <div class="w-50 ml-3">
+                <% if (locals.errors && locals.errors.password) { %>
+                  <% locals.errors.password.forEach(function(error) { %>
+                    <p class="alert alert-danger" role="alert"><%= error %></p>
+                  <% }) %>
+                <% } %>
                 <%- include('partials/updatePassword'); %>
               </div>
             </div>

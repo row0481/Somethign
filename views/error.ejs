@@ -1,10 +1,10 @@
 <%- include('partials/header'); %> 
 <div id="main" class="error404">
   <div class="container-fluid">
-    <div class="row">
+    <div class="d-flex flex-column align-items-center pt-5">
       <main role="main" class="col error404"></main>
-        <h1><%= error.status %></h1>
-        <h3 class="text-center w-100"><%= message %></h3>
+        <h1 class="error-header"><%= error.status %></h1>
+        <h3 class="error-subtext text-center w-100"><%= message %></h3>
       </main>
     </div> <!-- end .row --> 
   </div><!-- end .container-fluid -->

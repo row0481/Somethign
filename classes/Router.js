@@ -68,6 +68,9 @@ class Router{
 
     // Renders home page ./views/index.ejs
     index(request, response, next) {
+        if (request.session.token) {
+            response.redirect('/account');
+        }
         response.render('index');
     }
 

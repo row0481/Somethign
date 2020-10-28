@@ -37,7 +37,6 @@ class UserController{
      */
     addRoutes(){
         // Add all routing middleware for user endpoints
-        AraDTApp.get('/register', this.signup);
         AraDTApp.post('/register', this.register);
         AraDTApp.post('/login', this.login);
         AraDTApp.get('/logout', this.logout);
@@ -45,10 +44,6 @@ class UserController{
         AraDTApp.post('/account', this.updateAccount);
         AraDTApp.post('/password', this.updatePassword);
     }
-
-    signup = async (request, response) => {
-        response.render('register');
-    };
 
     /**
      * Asynchronous function that handles post form submission to '/login'

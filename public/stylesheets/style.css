@@ -1,6 +1,6 @@
 /*index*/
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 17px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #bbbbbb;
 }
 
@@ -9,4 +9,12 @@ nav {background-color: #9b9b9b;
 
 .chatSidebar {
   display: flex;
+}
+
+.error-header {
+  font-size: 10rem;
+}
+
+.error-subtext {
+  font-size: 3rem;
 }

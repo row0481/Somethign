@@ -6,7 +6,20 @@
     <div class="col-md-3 p-4 mb-3 bg-light rounded">
       <div class="container">
         <div class="row">
-          <div role="main" class="col-md d-flex justify-content-center">
+
+            <% if (locals.errors && locals.errors.login) { %>
+              <% locals.errors.login.forEach(function(error) { %>
+                <p class="alert alert-danger" role="alert"><%= error %></p>
+              <% }) %>  
+            <% } %>
+
+            <% if (locals.errors && locals.errors.register) { %>
+              <% locals.errors.register.forEach(function(error) { %>
+                <p class="alert alert-danger" role="alert"><%= error %></p>
+              <% }) %>  
+            <% } %>
+
+            <div role="main" class="col-md d-flex justify-content-center">
             <%- include('partials/login'); %>
             <%- include('partials/register'); %>
           </div>
